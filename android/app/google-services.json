@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "464221935281",
+    "project_id": "tailortrade-b1047",
+    "storage_bucket": "tailortrade-b1047.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:464221935281:android:f0fd35d634f0aec034b490",
+        "android_client_info": {
+          "package_name": "com.example.tailor_trade"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdLLxGYnlOxSBJFgH-3NrcuIP3HAUuvcY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
