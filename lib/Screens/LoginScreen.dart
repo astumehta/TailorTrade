@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -63,9 +64,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     prefixIcon: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                          child: const Icon(Icons.person),
+                        const Padding(
+                          padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                          child: Icon(Icons.mail),
                         ),
                         const SizedBox(width: 1.0),
                         // Add a Container with 1-width black vertical line
@@ -76,7 +77,6 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ],
                     ),
-        
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10.0),
                       borderSide: BorderSide.none,
@@ -87,40 +87,37 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 const SizedBox(height: 20),
                 TextField(
-  obscureText: passsecure,
-  controller: password,
-  style: const TextStyle(
-    color: Color.fromRGBO(0, 0, 0, 1),
-  ),
-  decoration: InputDecoration(
-    hintText: "Password",
-    
-    contentPadding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 10.0),
-    prefixIcon: const Icon(Icons.lock),
-    prefixIconColor: const Color.fromRGBO(0, 0, 0, 1),
-    suffixIcon: GestureDetector(
-      onTap: () {
-        setState(() {
-          passsecure = !passsecure;
-        });
-      },
-      child: Icon(
-        passsecure ? Icons.visibility_off : Icons.visibility,
-        color: Colors.black,
-      ),
-    ),
-    filled: true,
-    fillColor: const Color(0xffDFD3C3),
-    floatingLabelBehavior: FloatingLabelBehavior.always,
-    border: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(10.0), 
-      borderSide: BorderSide.none, // Removing the border side
-    ),
-    
-  ),
-),
-
-
+                  obscureText: passsecure,
+                  controller: password,
+                  style: const TextStyle(
+                    color: Color.fromRGBO(0, 0, 0, 1),
+                  ),
+                  decoration: InputDecoration(
+                    hintText: "Password",
+                    contentPadding: const EdgeInsets.symmetric(
+                        vertical: 12.0, horizontal: 10.0),
+                    prefixIcon: const Icon(Icons.lock),
+                    prefixIconColor: const Color.fromRGBO(0, 0, 0, 1),
+                    suffixIcon: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          passsecure = !passsecure;
+                        });
+                      },
+                      child: Icon(
+                        passsecure ? Icons.visibility_off : Icons.visibility,
+                        color: Colors.black,
+                      ),
+                    ),
+                    filled: true,
+                    fillColor: const Color(0xffDFD3C3),
+                    floatingLabelBehavior: FloatingLabelBehavior.always,
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                      borderSide: BorderSide.none, // Removing the border side
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
