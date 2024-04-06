@@ -24,11 +24,11 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Center(
             child: Column(
               crossAxisAlignment:
-                  CrossAxisAlignment.start, // Aligns text to the left
+                  CrossAxisAlignment.start,
               children: [
                 const Image(
                   image: AssetImage(
-                      "images/—Pngtree—flat design of tailor fashion_6101332.png"),
+                      "images/Screenshot_2024-03-13_at_7.44.56_PM-removebg-preview.png"),
                   width: 750,
                   height: 350,
                 ),
@@ -39,7 +39,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     fontSize: 30.0,
                     fontWeight: FontWeight.bold,
                     color: const Color(
-                        0xff596E79), // Color property needs correction
+                        0xff596E79), 
                   ),
                 ),
                 Text(
@@ -48,12 +48,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   style: GoogleFonts.poppins(
                     fontSize: 17.0,
                     color: const Color(
-                        0xff596E79), // Color property needs correction
+                        0xff596E79), 
                   ),
                 ),
                 const SizedBox(height: 30),
                 TextField(
-                  controller: email, // Replace with your TextEditingController
+                  controller: email,
                   style: const TextStyle(
                     color: Color.fromRGBO(0, 0, 0, 1),
                   ),
@@ -69,7 +69,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: Icon(Icons.mail),
                         ),
                         const SizedBox(width: 1.0),
-                        // Add a Container with 1-width black vertical line
                         Container(
                           width: 1.0,
                           color: Colors.black,
@@ -114,11 +113,14 @@ class _LoginScreenState extends State<LoginScreen> {
                     floatingLabelBehavior: FloatingLabelBehavior.always,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10.0),
-                      borderSide: BorderSide.none, // Removing the border side
+                      borderSide: BorderSide.none, 
                     ),
                   ),
                 ),
+                const SizedBox(height: 20,),
+                const Divider(thickness: 1,color: Colors.black,)
               ],
+              
             ),
           ),
         ),
