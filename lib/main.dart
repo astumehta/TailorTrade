@@ -2,7 +2,7 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:tailor_trade/Screens/TailorMainPage.dart';
+import 'package:tailor_trade/Screens/LoginScreen.dart';
 import 'package:tailor_trade/firebase_options.dart';
 
 void main() async {
@@ -57,7 +57,6 @@ class SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // ignore: avoid_unnecessary_containers
       body: Container(
         child: AnimatedSplashScreen(
           splash: Center( 
@@ -69,7 +68,7 @@ class SplashScreenState extends State<SplashScreen> {
               ),
             ),
           ),
-          nextScreen: const TailorMainPage(),
+          nextScreen: const LoginScreen(),
         ),
       ),
     );
