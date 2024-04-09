@@ -2,8 +2,11 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:tailor_trade/Screens/LoginScreen.dart';
+import 'package:tailor_trade/Screens/auth/login_screen.dart';
+import 'package:tailor_trade/Screens/auth/who_are_you.dart';
+import 'package:tailor_trade/Screens/tailor/TailorMainPage.dart';
 import 'package:tailor_trade/firebase_options.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,9 +17,10 @@ void main() async {
     null,
     [
       NotificationChannel(
-          channelKey: 'basic_channel',
-          channelName: 'basic_notification',
-          channelDescription: 'notification channel'),
+        channelKey: 'basic_channel',
+        channelName: 'basic_notification',
+        channelDescription: 'notification channel',
+      ),
     ],
     debug: true,
   );
@@ -56,20 +60,19 @@ class SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
+    User? user = FirebaseAuth.instance.currentUser;
     return Scaffold(
-      body: Container(
-        child: AnimatedSplashScreen(
-          splash: Center( 
-            child: Transform.scale(
-              scale: 3.0, 
-              child: Image.asset(
-                "images/de8axxt-7b8bb469-b579-4f9b-b946-d985f74f1d8f.gif",
-                fit: BoxFit.contain,
-              ),
+      body: AnimatedSplashScreen(
+        splash: Center(
+          child: Transform.scale(
+            scale: 3.0,
+            child: Image.asset(
+              "images/de8axxt-7b8bb469-b579-4f9b-b946-d985f74f1d8f.gif",
+              fit: BoxFit.contain,
             ),
           ),
-          nextScreen: const LoginScreen(),
         ),
+        nextScreen: (user != null) ? const WhoAreYou() : const LoginScreen(),
       ),
     );
   }

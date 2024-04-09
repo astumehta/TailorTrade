@@ -1,15 +1,17 @@
 // ignore: file_names
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tailor_trade/Screens/auth/who_are_you.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<SignUpScreen> createState() => SignUpScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class SignUpScreenState extends State<SignUpScreen> {
   bool passsecure = false;
   final TextEditingController email = TextEditingController();
   final TextEditingController password = TextEditingController();
@@ -118,6 +120,15 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                 ),
+                TextButton(
+                    onPressed: () {
+                      FirebaseAuth.instance.createUserWithEmailAndPassword(
+                          email: email.text.trim(),
+                          password: password.text.trim());
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(
+                          builder: (context) => const WhoAreYou()));
+                    },
+                    child: const Text('SignUp')),
               ],
             ),
           ),

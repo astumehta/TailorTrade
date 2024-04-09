@@ -17,7 +17,10 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      return web;
+      throw UnsupportedError(
+        'DefaultFirebaseOptions have not been configured for web - '
+        'you can reconfigure this by running the FlutterFire CLI again.',
+      );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -25,7 +28,10 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        return macos;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -43,39 +49,20 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyA5pD7CCDKITX2iWDEKsd_4oNntaoVz2iA',
-    appId: '1:464221935281:web:cb173e9bd517178034b490',
-    messagingSenderId: '464221935281',
-    projectId: 'tailortrade-b1047',
-    authDomain: 'tailortrade-b1047.firebaseapp.com',
-    storageBucket: 'tailortrade-b1047.appspot.com',
-    measurementId: 'G-F6XZY6JC7T',
-  );
-
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAdLLxGYnlOxSBJFgH-3NrcuIP3HAUuvcY',
-    appId: '1:464221935281:android:f0fd35d634f0aec034b490',
-    messagingSenderId: '464221935281',
-    projectId: 'tailortrade-b1047',
-    storageBucket: 'tailortrade-b1047.appspot.com',
+    apiKey: 'AIzaSyDkaX4ccCDHvfQuwEKrigAJvTHS2SFNs3I',
+    appId: '1:622676426400:android:c6f757beb224b6dffc53c5',
+    messagingSenderId: '622676426400',
+    projectId: 'tailortrade-2d89c',
+    storageBucket: 'tailortrade-2d89c.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBTeYqkdJVNBvjWtRgO-OGVWXGpVHuVELQ',
-    appId: '1:464221935281:ios:dd3d093dc87827c934b490',
-    messagingSenderId: '464221935281',
-    projectId: 'tailortrade-b1047',
-    storageBucket: 'tailortrade-b1047.appspot.com',
+    apiKey: 'AIzaSyAOGDOKu8Xv5Fh3XuYbZCOJmsx54A1Hq9U',
+    appId: '1:622676426400:ios:c514b5b501e96178fc53c5',
+    messagingSenderId: '622676426400',
+    projectId: 'tailortrade-2d89c',
+    storageBucket: 'tailortrade-2d89c.appspot.com',
     iosBundleId: 'com.example.tailorTrade',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyBTeYqkdJVNBvjWtRgO-OGVWXGpVHuVELQ',
-    appId: '1:464221935281:ios:beeebe2e32c17a2d34b490',
-    messagingSenderId: '464221935281',
-    projectId: 'tailortrade-b1047',
-    storageBucket: 'tailortrade-b1047.appspot.com',
-    iosBundleId: 'com.example.tailorTrade.RunnerTests',
   );
 }
